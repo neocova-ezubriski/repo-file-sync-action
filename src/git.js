@@ -64,7 +64,7 @@ class Git {
 		core.debug(`Cloning ${ this.repo.fullName } into ${ this.workingDir }`)
 
 		return execCmd(
-			`git clone --depth 1 ${ this.repo.branch !== 'default' ? '--branch "' + this.repo.branch + '"' : '' } ${ this.gitUrl } ${ this.workingDir }`
+			`git clone --depth 1 ${ this.repo.branch !== 'default' ? '--branch "' + this.repo.branch + '"' : '' } -- ${ this.gitUrl } ${ this.workingDir }`
 		)
 	}
 
